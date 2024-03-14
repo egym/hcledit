@@ -11,7 +11,7 @@ builds:
       - arm64
     ldflags:
       - -s -w
-      - -X github.com/minamijoyo/hcledit/cmd.Version={{.Version}}
+      - -X github.com/egym/hcledit/cmd.Version={{.Version}}
     env:
       - CGO_ENABLED=0
 release:
@@ -23,18 +23,3 @@ changelog:
       - Merge branch
       - Update README
       - Update CHANGELOG
-brews:
-  - tap:
-      owner: minamijoyo
-      name: homebrew-hcledit
-      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    commit_author:
-      name: "Masayuki Morita"
-      email: minamijoyo@gmail.com
-    homepage: https://github.com/minamijoyo/hcledit
-    description: "A command line editor for HCL"
-    skip_upload: auto
-    test: |
-      system "#{bin}/hcledit version"
-    install: |
-      bin.install "hcledit"
