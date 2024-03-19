@@ -23,3 +23,5 @@ changelog:
       - Merge branch
       - Update README
       - Update CHANGELOG
+archives:
+  - name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
